@@ -1,8 +1,15 @@
-import PropTypes from 'prop-types'
 import Cta from '../Cta'
 import { PortableText, urlFor } from '../../utils/sanity'
+import { CtaProps } from "../../models/CtaProps";
 
-function Hero (props) {
+interface HeroProps {
+  heading?: string,
+  backgroundImage?: {alt?: string},
+  tagline?: Object[],
+  ctas?: CtaProps[]
+}
+
+function Hero (props: HeroProps) {
   const { heading, backgroundImage, tagline, ctas } = props
 
   return (
@@ -31,13 +38,6 @@ function Hero (props) {
       </div>
     </div>
   )
-}
-
-Hero.propTypes = {
-  heading: PropTypes.string,
-  backgroundImage: PropTypes.object,
-  tagline: PropTypes.array,
-  ctas: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Hero

@@ -1,8 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { CtaProps } from "../models/CtaProps";
 
-function cta (props) {
+
+
+function cta (props: CtaProps) {
   const { title, route, link } = props
 
   if (route && route.slug && route.slug.current) {
@@ -18,16 +20,6 @@ function cta (props) {
   }
 
   return <a>{title}</a>
-}
-
-cta.propTypes = {
-  title: PropTypes.string.isRequired,
-  route: PropTypes.shape({
-    slug: PropTypes.shape({
-      current: PropTypes.string
-    })
-  }),
-  link: PropTypes.string
 }
 
 export default cta

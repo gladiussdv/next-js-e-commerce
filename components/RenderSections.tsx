@@ -1,21 +1,21 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
 import { upperFirst } from 'lodash'
 import * as SectionComponents from './sections'
+import { RenderSectionsProps } from "../models/RenderSectionsProps";
+import { Section } from "../models/Section";
 
-function resolveSections (section) {
-  // eslint-disable-next-line import/namespace
+function resolveSections (section: Section) {
   const Section = SectionComponents[upperFirst(section._type)]
 
   if (Section) {
     return Section
   }
 
-  console.error('Cant find section', section) // eslint-disable-line no-console
+  console.error('Cant find section', section)
   return null
 }
 
-function RenderSections (props) {
+function RenderSections (props: RenderSectionsProps) {
   const { sections } = props
 
   if (!sections) {
@@ -33,16 +33,6 @@ function RenderSections (props) {
         return <SectionComponent {...section} key={section._key} />
       })}
     </Fragment>
-  )
-}
-
-RenderSections.propTypes = {
-  sections: PropTypes.arrayOf(
-    PropTypes.shape({
-      _type: PropTypes.string,
-      _key: PropTypes.string,
-      section: PropTypes.instanceOf(PropTypes.object)
-    })
   )
 }
 

@@ -23,7 +23,7 @@ function ProductPageContainer({ pageData, preview }) {
   return <LandingPage page={page} />
 }
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ params = {}, preview = false }: {params: {slug?: Object}, preview: boolean}) {
   const { page: pageData } = await getClient(preview).fetch(query, {
     slug: params.slug
   })

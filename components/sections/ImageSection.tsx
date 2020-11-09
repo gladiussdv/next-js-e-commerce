@@ -1,8 +1,18 @@
-import PropTypes from 'prop-types'
 import Cta from '../Cta'
 import { PortableText, urlFor } from '../../utils/sanity'
+import { CtaProps } from "../../models/CtaProps";
 
-function ImageSection (props) {
+interface ImageSectionProps {
+  heading?: string;
+  label?: string;
+  text?: Object[];
+  image?: {asset: {_ref: string}};
+  backgroundImage?: string;
+  tagline?: string;
+  cta: CtaProps
+}
+
+function ImageSection (props: ImageSectionProps) {
   const { heading, label, text, image, cta } = props
 
   if (!image) {
@@ -37,20 +47,6 @@ function ImageSection (props) {
       </div>
     </div>
   )
-}
-
-ImageSection.propTypes = {
-  heading: PropTypes.string,
-  label: PropTypes.string,
-  text: PropTypes.array,
-  image: PropTypes.shape({
-    asset: PropTypes.shape({
-      _ref: PropTypes.string
-    })
-  }),
-  backgroundImage: PropTypes.string,
-  tagline: PropTypes.string,
-  cta: PropTypes.object
 }
 
 export default ImageSection
