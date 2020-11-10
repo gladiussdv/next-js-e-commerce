@@ -30,7 +30,7 @@ function Hero (props: HeroProps) {
                 .auto('format')
                 .width(1051)
                 .fit('crop')
-                .quality(80)}
+                .quality(80).toString()}
               alt={backgroundImage.alt}
             />
           </div>
