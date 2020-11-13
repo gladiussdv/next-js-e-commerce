@@ -36,6 +36,11 @@ import textSection from "./objects/textSection";
 import localeString from "./locale/String";
 import localeText from "./locale/Text";
 import localeBlockContent from "./locale/BlockContent";
+import post from "./custom/post";
+import auther from "./custom/auther";
+import figureBlog from "./custom/figureBlog";
+import richText from "./custom/richText";
+import youtube from "./custom/youtube";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,6 +51,12 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    post,
+    auther,
+    figureBlog,
+    richText,
+    youtube,
+
     product,
     popup,
     vendor,
