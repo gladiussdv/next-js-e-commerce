@@ -19,7 +19,8 @@
     "next-sanity": "^0.1.5",
     "postcss-cli": "^8.2.0",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "react-webcam": "^5.2.1"
   },
   "devDependencies": {
     "@sanity/client": "^2.0.9",

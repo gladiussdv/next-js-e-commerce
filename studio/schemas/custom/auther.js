@@ -1,3 +1,4 @@
+import Webcam from 'part:sanity-plugin-asset-source-webcam/image-asset-source';
 export default {
   name: 'auther',
   type: 'document',
@@ -14,7 +15,12 @@ export default {
     },
     {
       name: 'image',
-      type: 'figureBlog'
+      type: 'figureBlog',
+      title: 'image',
+      options: {
+        hotspot: true,
+        sources: [Webcam]
+      }
     }
   ]
 }
